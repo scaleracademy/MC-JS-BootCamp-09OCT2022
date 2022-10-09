@@ -8,13 +8,22 @@ const listNum = document.getElementById("listNum");
 btnPrint.onclick = function() {
   const start = Date.now()
   const num = parseInt(inpNum.value);
-  
+  let c3 = 0;
+  let c5 = 0;
   for (let i = 1; i <= num; i++) {
     const li = document.createElement('li')
 
     let text = ''
-    if (i % 3 === 0) text += 'fizz'
-    if (i % 5 === 0) text += 'buzz'
+    c3++
+    c5++
+    if (c3 == 3)  {
+      text += 'fizz'
+      c3 = 0
+    }
+    if (c5 == 5)  {
+      text += 'buzz'
+      c5 = 0
+    }
     if (text === '') text = i
     
     li.innerText = text

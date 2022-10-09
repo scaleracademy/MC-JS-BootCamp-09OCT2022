@@ -9,11 +9,11 @@ btnPrint.onclick = function() {
   const start = Date.now()
   const num = parseInt(inpNum.value);
   
+  let data = ''
   for (let i = 1; i <= num; i++) {
-    const li = document.createElement('li')
-    li.innerText = i
-    listNum.appendChild(li)
+    data += `<li>${i}</li>`;
   }
+  listNum.innerHTML = data;
 
   const end = Date.now()
   console.log("time taken = " + (end - start))
